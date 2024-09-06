@@ -34,7 +34,7 @@ app.get('/notes', async(req,res)=>{
 app.get('/notes/:id', async(req,res)=>{
     try {
         const id = await req.params.id;
-        const data =await  noteModel.findById(id);
+        const data =await noteModel.findById(id);
         res.status(200).json(data);
     } catch (error) {
         res.status(500).json({message:error.message})
